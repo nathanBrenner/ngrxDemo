@@ -19,10 +19,10 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    StoreDevtoolsModule.instrumentOnlyWithExtension(),
     StoreModule.provideStore({
       session: sessionReducer
     }),
+    StoreDevtoolsModule.instrumentOnlyWithExtension(),
     BrowserModule,
     FormsModule,
     HttpModule
