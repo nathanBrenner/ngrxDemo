@@ -8,6 +8,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
+// reducers
+import { sessionReducer } from './shared/reducers/session.reducer';
+
+// root component
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -16,6 +20,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
+    StoreModule.provideStore({
+      session: sessionReducer
+    }),
     BrowserModule,
     FormsModule,
     HttpModule
