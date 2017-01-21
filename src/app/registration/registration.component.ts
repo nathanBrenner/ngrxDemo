@@ -26,10 +26,10 @@ export class RegistrationComponent implements OnInit {
 
   onSubmitRegistrationForm(payload){
     this._store.dispatch({
-      type: SESSION_ACTIONS.REGISTER_USER.SUCCESS,
+      type: SESSION_ACTIONS.REGISTER_USER.ATTEMPT,
       payload: payload
     });
-    setTimeout(() => this.router.navigate(['/']), 2000);
+    setTimeout(() => this.router.navigate(['/']), 1000);
   }
 
 }

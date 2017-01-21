@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   onSubmitLoginForm(payload){
     this._store.dispatch({
-      type: SESSION_ACTIONS.LOGIN_USER.SUCCESS,
+      type: SESSION_ACTIONS.LOGIN_USER.ATTEMPT,
       payload: payload
     })
     setTimeout(() => this.router.navigate(['/']), 2000);

@@ -14,6 +14,9 @@ import { EffectsModule } from '@ngrx/effects';
 import { errorReducer } from './shared/reducers/error.reducer';
 import { sessionReducer } from './shared/reducers/session.reducer';
 
+// effects
+import { SessionEffects } from './shared/effects/session.effects';
+
 // services
 import { QuestionService } from './shared/services/question.service';
 import { HttpWrapperService } from './shared/services/http-wrapper.service';
@@ -48,6 +51,7 @@ import { RegistrationComponent } from './registration/registration.component';
     DynamicFormQuestionComponent
   ],
   imports: [
+    EffectsModule.run(SessionEffects),
     StoreModule.provideStore({
       error: errorReducer,
       session: sessionReducer
@@ -62,7 +66,8 @@ import { RegistrationComponent } from './registration/registration.component';
   ],
   providers: [
     HttpWrapperService,
-    QuestionService
+    QuestionService,
+    SessionService
   ],
   bootstrap: [AppComponent]
 })
