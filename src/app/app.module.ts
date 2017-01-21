@@ -11,10 +11,12 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
 // reducers
+import { errorReducer } from './shared/reducers/error.reducer';
 import { sessionReducer } from './shared/reducers/session.reducer';
 
 // services
 import { QuestionService } from './shared/services/question.service';
+import { HttpWrapperService } from './shared/services/http-wrapper.service';
 import { SessionService } from './shared/services/session.service';
 
 // root component
@@ -47,6 +49,7 @@ import { RegistrationComponent } from './registration/registration.component';
   ],
   imports: [
     StoreModule.provideStore({
+      error: errorReducer,
       session: sessionReducer
     }),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
@@ -58,6 +61,7 @@ import { RegistrationComponent } from './registration/registration.component';
     AppRoutingModule
   ],
   providers: [
+    HttpWrapperService,
     QuestionService
   ],
   bootstrap: [AppComponent]
