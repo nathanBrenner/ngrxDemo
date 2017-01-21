@@ -10,25 +10,29 @@ export class QuestionService {
       new TextboxQuestion({
         key: 'username',
         label: 'Username',
-   	   	required: true,
+        required: true,
+        type:'text',
         order: 1
-   	  }),
+      }),
       new TextboxQuestion({
         key: 'email',
         label: 'Email',
         required: true,
+        type: 'text',
         order: 2
       }),
       new TextboxQuestion({
         key: 'password',
         label: 'Password',
         required: true,
+        type: "password",
         order: 3
       }),
       new TextboxQuestion({
         key: 'verify_password',
         label: 'Verify Password',
         required: true,
+        type: 'password',
         order: 4
       })
     ];
@@ -41,12 +45,14 @@ export class QuestionService {
         key: 'email',
         label: 'Email',
         required: true,
+        type: 'text',
         order: 1
       }),
       new TextboxQuestion({
         key: 'password',
         label: 'Password',
         required: true,
+        type: 'password',
         order: 2
       })
     ];
