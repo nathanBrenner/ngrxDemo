@@ -8,11 +8,14 @@ import { Store } from '@ngrx/store'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
   session$;
 
   constructor(private _store: Store<any>){
     this.session$ = _store.select('session');
+  }
+
+  onSignOut(){
+    // todo
   }
 
 }

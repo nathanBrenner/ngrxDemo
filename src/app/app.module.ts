@@ -20,12 +20,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
 
 // dumb components
-import { RegistrationComponent } from './registration/registration.component';
+
 
 // smart components
-import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RegistrationComponent,
     LoginComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NavbarComponent
   ],
   imports: [
     StoreModule.provideStore({
